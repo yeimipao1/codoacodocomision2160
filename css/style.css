@@ -25,26 +25,34 @@ li{
     margin: 10px 10px;
 
 }
-.li:hover{
+li:hover{
     background-color: transparent;
     box-shadow: 5px 4px 5px white;
 }
+
 #padre, ul{
     background-color: black;
     display: flex;
     justify-content: space-around;/* flex-star, flex-end, flex-center, space-around*/
-    position: center;
-    top: 20px;
-    left: 250px;
+    position: fixed;
+    top: 0px;
+    left: 350px;
+    
+    
 }
+
 .hija{
     background-color: aqua;
     width: 150px;
     height: 150px;
     margin-top: 50px;
     margin-bottom: 50px;
-    border-left: white;
+    border-left:10px solid white;
     border-radius: 10px 0px;
+}
+.hija:hover{
+    border-radius: 0px 10px;
+
 }
     
 h2{
@@ -59,7 +67,9 @@ p{
 #init, #add, #status, #commit, #push{
     width: 18%;
     float: left;
-    border: 5px solid black;
+    border-bottom: 5px solid black;
+    border-top: 5px double black;
+    border-right: 5px dotted black;
     box-sizing: border-box;
     margin: 5px; 
     height: 800px;      
