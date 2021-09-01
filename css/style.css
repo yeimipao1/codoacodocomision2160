@@ -1,25 +1,41 @@
 /* selector{ propiedad:valor; propiedad:valor;} */
+html{
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.miestilo{
+    font-family: 'Noto Sans JP', sans-serif;
+}
 body{
     background-color: bisque;
 }
 h1{
+    text-align: center;
     background-color: black;
     color: white !important;
 }
 li{
     display:inline;
-    background-color: blue;
+    background-color: rgba(0, 0, 255, 0.781);
     border: 1px solid black;
     padding: 10px;
     color: white;
     cursor: pointer;
     box-shadow: 4px 5px 3px black;
     margin: 10px 10px;
+
+}
+.li:hover{
+    background-color: transparent;
+    box-shadow: 5px 4px 5px white;
 }
 #padre, ul{
     background-color: black;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around;/* flex-star, flex-end, flex-center, space-around*/
+    position: center;
+    top: 20px;
+    left: 250px;
 }
 .hija{
     background-color: aqua;
@@ -27,5 +43,36 @@ li{
     height: 150px;
     margin-top: 50px;
     margin-bottom: 50px;
+    border-left: white;
+    border-radius: 10px 0px;
 }
-
+    
+h2{
+    text-align: center;
+}
+p{
+    text-align: justify;
+    color: blanchedalmond;
+    background-color: blue;
+    padding: 15px;
+}
+#init, #add, #status, #commit, #push{
+    width: 18%;
+    float: left;
+    border: 5px solid black;
+    box-sizing: border-box;
+    margin: 5px; 
+    height: 800px;      
+}
+span{
+    background-color: chartreuse;
+    color: rgb(245, 245, 30);
+        
+}
+div#init{
+    background-color: blueviolet;
+       
+}
+div#init h2{
+    background-color: rgb(139, 26, 102);
+}
