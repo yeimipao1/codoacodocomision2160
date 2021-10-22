@@ -1,4 +1,4 @@
-alert("soy una vertana emergente");
+/*alert("soy una vertana emergente");
 console.log("Hola soy mensajes en la consola")
 /*Variables*/
 /*palabra reservada nombre de la variable */
@@ -33,10 +33,10 @@ if(hayClases == false || terminoLaClase == true){
 
   if(nombre_variable == undefined){
       elemento.innerHTML+="Estamos con una variable sin valor definido!"
-      elemento.innerHTML+="<p>Lui navas</p><p>Damian</p><p>David</p><p>Yeimi navarrete</p>"
-      elemento.style.backgroundColor="Blue"
-      elemento.style.color="white"
-    }
+      elemento.innerHTML+="<p>Luis navas</p><p>Damian</p><p>David</p><p>Yeimi navarrete</p>"
+     /* elemento.style.backgroundColor="Blue"
+      elemento.style.color="white"*/
+    } 
 /*
     let mensaje = prompt("Introduce tu mensaje");
     elemento.innerHTML+="<h3>" +mensaje + "</h3>";
@@ -67,4 +67,51 @@ if(hayClases == false || terminoLaClase == true){
             break;
     }
     */
+   /*
+   let num =0, num3=0;
+   num = Number(prompt("Ingresá el primer número"));
+   num3 = Number(prompt("Ingresá el segundo número"));
+
+
+   let resultado ="El resultado de la suma de "+num+" y "+num3+" es: " + (num +num3);
+*/
+   // palasbra reservada nombreArreglo =[index0, index1,...nindex];
+   let alumnos = ["Natalia", "Nicolas", "Ramiro", "Soledad"];
+
+   for(let a=0; a < alumnos.length; a++){
+       elemento.innerHTML+=`
+            <div class="card" style="width: 18rem;">
+                 <img src="..." class="card-img-top" alt="...">
+                 <div class="card-body">
+                     <h5 class="card-title">${alumnos[a]}</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                 </div>
+            </div>
+        `;
+}
+alumnos.push("Luis")
+alumnos[5]="David"
+alumnos.forEach((a,index)=>{
+    elemento.innerHTML+=`
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+         <div class="card-body">
+            <h5 class="card-title">${index + 1} ${a}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+`;
+});
+   
+     
+     
+     
+     
+     
+     
+     
+     
+
    
