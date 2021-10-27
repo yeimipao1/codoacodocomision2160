@@ -90,8 +90,9 @@ if(hayClases == false || terminoLaClase == true){
             </div>
         `;
 }
-alumnos.push("Luis")
+alumnos.push("Luis");
 alumnos[5]="David"
+
 alumnos.forEach((a,index)=>{
     elemento.innerHTML+=`
     <div class="card" style="width: 18rem;">
