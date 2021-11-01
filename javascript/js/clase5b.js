@@ -10,24 +10,29 @@ let mascotas = [];
 mascotas.forEach(m => {
     elemento.innerHTML+=`<h2>${m}</h2>`;
 });
+
+const agregarDatos=()=>{
+    let datos = document.querySelectorAll("input");
+let consulta="";
+if(datos[7].checked){
+    consulta="Consulta";
+    }else{consulta="Urgencia"}
+let mascota = {
+   propietario:datos[0].value,
+   nombre:datos[1].value,
+   especie:datos[2].value,
+   raza:datos[3].value,
+   edad:datos[4].value,
+   peso:datos[5].value,
+   imagen:datos[6].value,
+   tipoConsulta:consulta 
+}
+return mascota; 
+};
 const agregarMascota=()=>{
- let datos = document.querySelectorAll("input");
- let consulta="";
- if(datos[7].checked){
-     consulta="Consulta";
-     }else{consulta="Urgencia"}
- let mascota = {
-    propietario:datos[0].value,
-    nombre:datos[1].value,
-    especie:datos[2].value,
-    raza:datos[3].value,
-    edad:datos[4].value,
-    peso:datos[5].value,
-    imagen:datos[6].value,
-    tipoConsulta:consulta 
- }
+
  //console.log(datos[0].value);
- mascotas.push(mascota);
+ mascotas.push(agregarDatos());
  console.log(mascotas)
  mostrarMascotas();
 };
@@ -82,23 +87,8 @@ const crearForm=()=>{
 document.getElementById("btn").addEventListener('click',agregarMascota);
 };
 const actualizarM=(a)=>{
-    
-        let datos = document.querySelectorAll("input");
-        let consulta="";
-        if(datos[7].checked){
-            consulta="Consulta";
-            }else{consulta="Urgencia"}
-        let mascota = {
-           propietario:datos[0].value,
-           nombre:datos[1].value,
-           especie:datos[2].value,
-           raza:datos[3].value,
-           edad:datos[4].value,
-           peso:datos[5].value,
-           imagen:datos[6].value,
-           tipoConsulta:consulta 
-        }
-        mascotas[a]=mascota;
+
+        mascotas[a]=agregarDatos();
         mostrarMascotas();
 }
 const modificarM=(k)=>{
@@ -150,11 +140,15 @@ const modificarM=(k)=>{
 </form>
 `
 };
+const eliminarM=(z)=>{
+mascotas.splice(z,1);
+mostrarMascotas();
+};
 crearForm();
 //propietario,nombre,especie,raza,edad,peso,imagen,tipoconsulta}
 const mostrarMascotas=()=>{
     elemento.innerHTML="";
-    mascotas.forEach((m, index) =>{
+    mascotas.forEach((m,index) =>{
         
         elemento.innerHTML+=`
         <div class="col-12">
@@ -170,6 +164,7 @@ const mostrarMascotas=()=>{
                       <p class="card-text">Propietario: ${m.propietario}</p>
                       <a href="#" class="btn btn-primary" onclick="crearForm()">Agregar otra Mascota</a>
                       <a href="#" class="btn btn-primary" onclick="modificarM(${index})">Modificar</a>
+                      <a href="#" class="btn btn-primary" onclick="eliminarM(${index})">Eliminar</a>
 >
                  </div>
             </div>
@@ -181,4 +176,8 @@ const mostrarMascotas=()=>{
 let numeros = [78,35,65]
 console.log(numeros.indexOf(35))
 numeros[numeros.indexOf(35)]=99;
+console.log(numeros.length)
 console.log(numeros)
+numeros.splice(1,1)
+console.log(numeros)
+console.log(numeros.length)
