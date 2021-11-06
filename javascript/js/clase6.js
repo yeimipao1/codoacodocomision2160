@@ -20,11 +20,11 @@ function Persona(nombre,apellido,edad,dni){
     this.apellido=apellido;
     this.dni=dni;
 }
-class Nombreclase{
-    constructor(){
+//class Nombreclase{
+//    constructor(){//
 
-    }
-}
+//    }
+//}
 let Luis = new Persona("Luis","Navas",48,96008229);
 let Pedro = new Persona("Pedro","Ortega",25,96039971);
 console.log(Luis);
