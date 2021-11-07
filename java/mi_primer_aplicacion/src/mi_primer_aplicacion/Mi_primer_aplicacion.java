@@ -24,11 +24,13 @@ public class Mi_primer_aplicacion {
         }
         Juego jugador = new Juego(0,3,"Mario", "Hongos","Martillo");
         Juego jugador2 = new Juego(0,3,"Juan","Hongos","Martillo");
+        Juego jugador3 = new Juego(0,3,"David","Hongos","Martillo");
         
         System.out.println("Mi nombre es " + jugador.personaje);
-        System.out.println("Tego: " + jugador.vidas+ " vidas");
+        System.out.println("Tengo: " + jugador.getVidas()+ " vidas");
         System.out.println(jugador.mostrarSaludo());
         System.out.println(jugador2.mostrarSaludo());
+        System.out.println(jugador3.mostrarSaludo());
     }
 
         
