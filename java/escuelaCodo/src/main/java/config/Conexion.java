@@ -1,4 +1,3 @@
-
 package config;
 import java.sql.*;
 
@@ -8,7 +7,7 @@ public class Conexion {
     Connection c = null;
     try{
     Class.forName(driver);
-    c = DriverManager.getConnection("jdbc:mysql://localhost:3306/comision2160","yeimipao1", "123456");
+    c = DriverManager.getConnection("jdbc:mysql://localhost:3306/tarea obligatoria unidad n°11","yeimipao1", "123456");
     }catch(ClassNotFoundException | SQLException error){
         System.out.println(error.toString());
     }
