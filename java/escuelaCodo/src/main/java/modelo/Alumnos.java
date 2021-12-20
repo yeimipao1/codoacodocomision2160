@@ -8,6 +8,10 @@ public class Alumnos {
     private int fecha;
     private String provincia;
 
+    public Alumnos(int id, String nombre, String apellido, String edad, String fecha, String provincia) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getId() {
         return id;
     }

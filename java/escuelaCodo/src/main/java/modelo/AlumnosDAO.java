@@ -1,5 +1,6 @@
 package modelo;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 import config. Conexion;
 import java.sql.*;
 import java.util.ArrayList;
@@ -22,11 +23,11 @@ public class AlumnosDAO {
         
         while(rs.next()){
             int id = rs.getInt("id");
-            String  nombre = rs.getString("nombre");
-            String apellido = rs.getString("apellido");
+            java.lang.String  nombre = rs.getString("nombre");
+            java.lang.String apellido = rs.getString("apellido");
             int edad = rs.getInt("edad");
             int fecha = rs.getInt("fecha");
-            String provincia= rs.getString("provincia");
+            java.lang.String provincia= rs.getString("provincia");
             Alumnos alumnos = new Alumnos(id, nombre, apellido, edad, fecha, provincia);
             lista.add(alumnos);
         }
@@ -49,11 +50,11 @@ public class AlumnosDAO {
         
          while(rs.next()){
             int id = rs.getInt("id");
-            String  nombre = rs.getString("nombre");
-            String apellido = rs.getString("apellido");
+            java.lang.String  nombre = rs.getString("nombre");
+            java.lang.String apellido = rs.getString("apellido");
             int edad = rs.getInt("edad");
             int fecha = rs.getInt("fecha");
-            String provincia= rs.getString("provincia");
+            java.lang.String provincia= rs.getString("provincia");
             
             alumno = new Alumnos(id,nombre,apellido,edad,fecha,provincia);
         } return alumno;
@@ -87,11 +88,7 @@ public class AlumnosDAO {
       PreparedStatement ps;
         
     try{
-            ps = conexion.prepareStatement ("UPDATE" 
-                    +"participantes SET nombre=?"
-                    +"apellido=? edad=?"
-                    +"fecha=? provincia=?)"
-                    +"WHERE id=?");
+            ps = conexion.prepareStatement ("UPDATE participantes SET nombre=?,apellido=?,edad=?,fecha=?,provincia=? where id=?");
             ps.setString(1, alumno.getNombre());
             ps.setString(2, alumno.getApellido());
             ps.setInt(3,alumno.getEdad());
