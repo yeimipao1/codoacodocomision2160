@@ -43,8 +43,7 @@ public class AlumnosDAO {
        Alumnos alumno = null;
        
        try{
-            ps = conexion.prepareStatement("SELECT * FROM "
-                    + "participantes WHERE id=?");
+            ps = conexion.prepareStatement("SELECT * FROM participantes WHERE id=?");
             ps.setInt(1,_id);
            rs = ps.executeQuery();
            while(rs.next()){
@@ -67,10 +66,8 @@ public class AlumnosDAO {
     public boolean insertarAlumno(Alumnos alumno){
         PreparedStatement ps;
         try{
-             ps = conexion.prepareStatement("INSERT INTO "
-                     + "participantes"
-                     + "(nombres,apellidos,email,telefono)"
-                     + "VALUES (?,?,?,?)");
+             ps = conexion.prepareStatement("INSERT INTO participantes(nombres,apellidos,email,telefono)"
+                     +"VALUES (?,?,?,?)");
              ps.setString(1,alumno.getNombres());
              ps.setString(2,alumno.getApellidos());
              ps.setString(3,alumno.getEmail());
@@ -121,12 +118,11 @@ public class AlumnosDAO {
             rs = ps.executeQuery();
             while(rs.next()){
                 return email.equals(rs.getString("email"))&& clave.equals(rs.getString("password"));
-            }
+            }return false;
         }catch(SQLException e){
             System.out.println(e.toString());
             return false;
         }
-        return false;
-      
+        
     }
 }

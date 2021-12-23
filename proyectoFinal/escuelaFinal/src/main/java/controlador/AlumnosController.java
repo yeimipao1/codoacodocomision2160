@@ -63,9 +63,9 @@ public class AlumnosController extends HttpServlet {
             }else if(accion.equals("ingresar")){
                 String usuario = request.getParameter("email");
                 String clave = request.getParameter("pass");
-                boolean ingresa = alumnosDao.ingresarUsuario(usuario,clave);
+                boolean ingresa = alumnosDao.ingresarUsuario(usuario, clave);
                 if(ingresa){
-                 dispatcher = request.getRequestDispatcher(
+                    dispatcher = request.getRequestDispatcher(
                         "Vistas/alumnos.jsp");
                 }else{
                     dispatcher = request.getRequestDispatcher(
